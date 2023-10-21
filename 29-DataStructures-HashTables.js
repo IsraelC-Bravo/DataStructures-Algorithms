@@ -7,3 +7,14 @@
 //Arrays have a numeric index, so how do we implement numbers as an index?
 //A Hashing function accepts the string key, converts it into a hash code using defined logic and then maps it into a numeric index that is within the bounds of the array.
 //Using the index to store the value, the same hashing function is reused to retrieve the value given a key.
+
+//A Hash Table-Map supports three main operations:
+//1. Set to stroe a key-value pair
+//2. Get to retrieve a value given its key
+//3. Remove to delete a key-value pair.
+//4. Hashing function to convert a string key to a numeric index.
+
+//Hash Table Usage.
+//Has tables are typically implemented where constant time lookup and insertion are required
+//Database Indexing
+//Caches
