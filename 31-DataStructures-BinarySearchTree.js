@@ -71,3 +71,12 @@ class BinarySearchTree {
     }
   }
 }
+
+//test code
+
+const bst = new BinarySearchTree();
+console.log("This tree is empty ", bst.isEmpty());
+
+bst.insert(10);
+bst.insert(5);
+bst.insert(15);
