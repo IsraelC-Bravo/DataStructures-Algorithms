@@ -107,6 +107,21 @@ class BinarySearchTree {
       this.preOrder(root.right);
     }
   }
+
+  //In Order Traversal Pseudo Code:
+  //1. Visit the left subtree
+  //2. Read the data of the node
+  //3. Visit the right subtree
+  inOrder(root) {
+    if (root) {
+      //visit all left sub tree nodes in order
+      this.inOrder(root.left);
+      //read the value
+      console.log(root.value);
+      //visit all right sub tree nodes in order
+      this.inOrder(root.right);
+    }
+  }
 }
 
 //test code
