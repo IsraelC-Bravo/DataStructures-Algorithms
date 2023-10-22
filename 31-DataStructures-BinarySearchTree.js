@@ -236,11 +236,31 @@ class BinarySearchTree {
   }
 }
 
-//test code
-
+//Test code
 const bst = new BinarySearchTree();
 console.log("This tree is empty ", bst.isEmpty());
 
 bst.insert(10);
 bst.insert(5);
 bst.insert(15);
+bst.insert(3);
+
+console.log(bst.search(bst.root, 10));
+console.log(bst.search(bst.root, 5));
+console.log(bst.search(bst.root, 15));
+console.log(bst.search(bst.root, 20));
+
+console.log("DFS - Pre Order Traversal");
+bst.preOrder(bst.root);
+console.log("DFS - In Order Traversal");
+bst.inOrder(bst.root);
+console.log("DFS - Post Order Traversal");
+bst.postOrder(bst.root);
+console.log("BFS - Level Order Traversal");
+bst.levelOrder();
+
+console.log("Min value ", bst.min(bst.root));
+console.log("Max value ", bst.max(bst.root));
+
+bst.delete(10);
+bst.levelOrder();
