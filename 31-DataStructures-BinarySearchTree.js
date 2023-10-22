@@ -194,6 +194,46 @@ class BinarySearchTree {
       return this.max(root.right);
     }
   }
+
+  //delete() => delete a node given its value and reorganize the tree as necessary
+  delete(value) {
+    //use recursion with a helper function to find the right node
+    this.root = this.deleteNode(this.root, value);
+  }
+
+  //deleteNode() => searches for the node and reorganizes the tree
+  deleteNode(root, value) {
+    //if root node is empty
+    if (root === null) {
+      return root;
+    }
+    if (value < root.value) {
+      //traverse the left child nodes
+      root.left = this.deletNode(root.left, value);
+    } else if (value > root.value) {
+      //traverse the right child nodes
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      //if the node is a leaf node
+      if (!root.left && !root.right) {
+        return null;
+      }
+      //If the node has only 1 child
+      //if there is no left child
+      if (!root.left) {
+        return root.right;
+        //if there is no right child
+      } else if (!root.right) {
+        return root.left;
+      }
+      //when the root is removed, set the value of root to the min value of the right child nodes (or when the value is a nide with 2 children)
+      root.value = this.min(root.right);
+      //then delete the right child node
+      root.right = this.deleteNode(root.right, root.value);
+    }
+    //If none of the conditions are met, return the root.value
+    return root;
+  }
 }
 
 //test code
