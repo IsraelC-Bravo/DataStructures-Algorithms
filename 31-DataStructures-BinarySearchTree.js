@@ -70,6 +70,26 @@ class BinarySearchTree {
       }
     }
   }
+
+  //search() => check if a value exists in a tree.
+  search(root, value) {
+    //empty tree
+    if (!root) {
+      return false;
+    } else {
+      //if root value = given value
+      if (root.value === value) {
+        return true;
+        //check if the value is smaller than the root value
+      } else if (value < root.value) {
+        //search the left sub-tree by recursively call search
+        return this.search(root.left, value);
+      } else {
+        //search the left sub-tree by recursively call search
+        return this.search(root.right, value);
+      }
+    }
+  }
 }
 
 //test code
