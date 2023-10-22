@@ -16,6 +16,7 @@
 class Node {
   constructor(value) {
     this.value = value;
+    //set left and right pointers to null
     this.left = null;
     this.right = null;
   }
@@ -23,13 +24,50 @@ class Node {
 
 class BinarySearchTree {
   constructor() {
+    //set root pointer to null
     this.root = null;
   }
 
+  //isEmpty() => returns true / false if the tree is empty
   isEmpty() {
     return this.root === null;
   }
-}
 
-const bst = new BinarySearchTree();
-console.log("This tree is empty ", bst.isEmpty());
+  //insert() => create a new node to be added to the tree
+  insert(value) {
+    //create a newNode by initiating the Node class
+    const newNode = new Node(value);
+    //If there are no nodes
+    if (this.isEmpty()) {
+      //set the root pointer to the newNode
+      this.root = newNode;
+    } else {
+      //call the insertNode method and pass in the root pointer and the newNode value. This will call the method recursively.
+      this.insertNode(this.root, newNode);
+    }
+  }
+
+  //insertNode() => it handles where the newNode should be inserted
+  insertNode(root, newNode) {
+    //check if the newNode value is smaller than the root node value
+    if (newNode.value < root.value) {
+      //If so... check if the left child is empty
+      if (root.left === null) {
+        //If so... insert the newNode as the left child
+        root.left = newNode;
+      } else {
+        //else, recursively call the inserNode method to see the depth of the insertion and keep checking if this newNode will be a left or right child
+        this.insertNode(root.left, newNode);
+      }
+    } else {
+      //If the newNode value is greater than the root value node, and if the right child node is empty
+      if (root.right === null) {
+        //pass the newNode as the right child
+        root.right = newNode;
+      } else {
+        //esle, keep recursively calling the insertNode method to see the depth of the insertion and keep checking if this newNode will be a left or right child
+        this.insertNode(root.right, newNode);
+      }
+    }
+  }
+}
