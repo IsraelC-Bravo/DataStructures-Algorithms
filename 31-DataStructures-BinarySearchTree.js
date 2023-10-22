@@ -122,6 +122,21 @@ class BinarySearchTree {
       this.inOrder(root.right);
     }
   }
+
+  //Post Order Pseudo Code:
+  //1. Visit the left subtree
+  //2. Visit the right subtree
+  //3. Read the data of the node
+  postOrder(root) {
+    if (root) {
+      //visit all left subtree nodes
+      this.postOrder(root.left);
+      //visit all right subtree nodes
+      this.postOrder(root.right);
+      //read the data of the node
+      console.log(root.value);
+    }
+  }
 }
 
 //test code
