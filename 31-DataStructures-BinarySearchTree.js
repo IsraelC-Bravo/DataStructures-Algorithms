@@ -20,3 +20,16 @@ class Node {
     this.right = null;
   }
 }
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  isEmpty() {
+    return this.root === null;
+  }
+}
+
+const bst = new BinarySearchTree();
+console.log("This tree is empty ", bst.isEmpty());
