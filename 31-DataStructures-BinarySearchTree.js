@@ -12,3 +12,11 @@
 //2. Search - To find a node given its value
 //3. DFS(Depth Frist Seach) & BFS(Breadth Fist Search) - To visit all nodes in a tree.
 //4. Deletion - To remove a node given its value.
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
