@@ -170,6 +170,30 @@ class BinarySearchTree {
       }
     }
   }
+
+  //min() => used to find the left most leaf node which contains the min value in the tree
+  min(root) {
+    //If the root node doesn't have any left child nodes
+    if (!root.left) {
+      //return the value at root node
+      return root.value;
+    } else {
+      //else, recursively traverse the left child nodes until the last one
+      return this.min(root.left);
+    }
+  }
+
+  //max() => used to find the right most leaf node which contains the max value in the tress
+  max(root) {
+    //If the root node doesn't have any right child nodes
+    if (!root.right) {
+      //return the value at root node
+      return root.value;
+    } else {
+      //else, recursively traverse the left child nodes until the last one
+      return this.max(root.right);
+    }
+  }
 }
 
 //test code
