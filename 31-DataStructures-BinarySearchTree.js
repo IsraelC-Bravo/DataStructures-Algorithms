@@ -90,6 +90,23 @@ class BinarySearchTree {
       }
     }
   }
+
+  //Depth First Seach (DFS) methods:
+  //Preorder Traversal Pseudo Code:
+  //1. Read the data of the node
+  //2. Visit the left subtree
+  //3. Visit the right subtree
+  preOrder(root) {
+    //if the tree is not empty
+    if (root) {
+      //read the root node value
+      console.log(root.value);
+      //then visit all left sub tree nodes
+      this.preOrder(root.left);
+      //when that is done, visit all right sub tree nodes
+      this.preOrder(root.right);
+    }
+  }
 }
 
 //test code
