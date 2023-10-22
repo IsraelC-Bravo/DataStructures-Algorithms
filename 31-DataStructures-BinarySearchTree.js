@@ -92,6 +92,7 @@ class BinarySearchTree {
   }
 
   //Depth First Seach (DFS) methods:
+  //starting at the root node, traverse all nodes left - right
   //Preorder Traversal Pseudo Code:
   //1. Read the data of the node
   //2. Visit the left subtree
@@ -135,6 +136,38 @@ class BinarySearchTree {
       this.postOrder(root.right);
       //read the data of the node
       console.log(root.value);
+    }
+  }
+
+  //Breadth First Search:
+  //Explore all nodes at the present depth prior to moving on to the next nodes at the next level
+  //BFS Traversal Pseudo Code:
+  //1. Create a queue
+  //2. Enqueue the root node
+  //3. As long as te node exists in the queue
+  //a. Dequeue the node from front
+  //b. Read the node's value
+  //c. Enqueue the node's left child if it exists
+  //d. Enqueue the node's right child if it exists
+  levelOrder() {
+    //Use the optimsed queue implementation
+    const queue = [];
+    //push the root node to the queue
+    queue.push(this.root);
+    //while there are values in the queue
+    while (queue.length) {
+      //Create a temp variable "curr" to store the access the front value from the queue
+      let curr = queue.shift();
+      //log the value
+      console.log(curr.value);
+      //if there is a left child nodes, push it into the queue
+      if (curr.left) {
+        queue.push(curr.left);
+      }
+      //if there is a right child node, push it into the queue
+      if (curr.right) {
+        queue.push(curr.right);
+      }
     }
   }
 }
