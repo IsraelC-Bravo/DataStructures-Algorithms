@@ -80,7 +80,7 @@ class Graph {
     if (!this.adjacencyList[vertex2]) {
       this.addVertex(vertex2);
     }
-    //to connect the edges between vertices, use the add() methos from the set Data Structure on both vertices.
+    //to connect the edges between vertices, use the add() method from the set Data Structure on both vertices.
     this.adjacencyList[vertex1].add(vertex2);
     this.adjacencyList[vertex2].add(vertex1);
   }
