@@ -39,3 +39,14 @@ const matrix = [
 ];
 
 console.log(matrix[0][1]);
+
+//B: Adjacency List
+//Vertices (nodes) are stored in a map like data structure, and every vertex stores a list of its own adjacent vertices.
+
+const adjacencyList = {
+  A: ["B"],
+  B: ["A", "C"],
+  C: ["B"],
+};
+
+console.log(adjacencyList["A"]);
