@@ -125,3 +125,20 @@ class Graph {
     }
   }
 }
+
+//test code
+
+const graph = new Graph();
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+
+graph.addEdge("A", "B");
+graph.addEdge("B", "C");
+
+graph.display();
+console.log(graph.hasEdge("A", "B"));
+console.log(graph.hasEdge("A", "C"));
+console.log(graph.hasEdge("B", "A"));
+graph.removeVertex("B");
+graph.display();
