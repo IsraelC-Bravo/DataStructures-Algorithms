@@ -50,3 +50,8 @@ const adjacencyList = {
 };
 
 console.log(adjacencyList["A"]);
+
+//Adjacency Matrix vs Adjacency List
+//With an adjacency list, we only need to store the values for the edges that exist. With adjacency matrix we store values irrespective of whether an edge exists or not... Storage wise, an adjacency list is more efficient.
+//With an Adjacency List, inserting and finding adjacent nodes is constant time complexity, whereas with adjacency matrix, it is linear complexity.
+//Adjacency Lists allows you to store additional values with an edge such as weight of the edge. With an Adjacency Matrix, such information would have to be stored externally.
