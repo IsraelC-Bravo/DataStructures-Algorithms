@@ -84,4 +84,13 @@ class Graph {
     this.adjacencyList[vertex1].add(vertex2);
     this.adjacencyList[vertex2].add(vertex1);
   }
+
+  //display() => prints the adjacencyList with all vertices and sub Lists from each vertex
+  display() {
+    //Loop through the graph
+    for (let vertex in this.adjacencyList) {
+      //print the vertex with the connection to its own list of adjacent vertices
+      console.log(vertex + " -> " + [...this.adjacencyList[vertex]]);
+    }
+  }
 }
