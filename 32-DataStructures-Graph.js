@@ -85,6 +85,28 @@ class Graph {
     this.adjacencyList[vertex2].add(vertex1);
   }
 
+  //removeEdge() => removes the connection between nodes
+  removeEdge(vertex1, vertex2) {
+    //Use the delete method from the Set DS to remove connections between nodes/vertices
+    this.adjacencyList[vertex1].delete(vertex2);
+    this.adjacencyList[vertex2].delete(vertex1);
+  }
+
+  //removeVertex() => removes a vertex from the graph list and all its edges (if any)
+  removeVertex(vertex) {
+    //if the vertex doesn't exists, just return
+    if (!this.adjacencyList[vertex]) {
+      return;
+    }
+    //Else, loop through the graph
+    for (let adjacentVertex of this.adjacencyList[vertex]) {
+      //remove all edges from the vertex to be deleted first. Call the removeEdge()
+      this.removeEdge(vertex, adjacentVertex);
+    }
+    //delete the vertex
+    delete this.adjacencyList[vertex];
+  }
+
   //hasEdge() => checks if there is an edge between the nodes
   hasEdge(vertex1, vertex2) {
     return (
