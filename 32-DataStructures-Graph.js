@@ -85,6 +85,15 @@ class Graph {
     this.adjacencyList[vertex2].add(vertex1);
   }
 
+  //hasEdge() => checks if there is an edge between the nodes
+  hasEdge(vertex1, vertex2) {
+    return (
+      //use the has method from the Set DS to ensure there is a connection between both vertices.
+      this.adjacencyList[vertex1].has(vertex2) &&
+      this.adjacencyList[vertex2].has(vertex1)
+    );
+  }
+
   //display() => prints the adjacencyList with all vertices and sub Lists from each vertex
   display() {
     //Loop through the graph
