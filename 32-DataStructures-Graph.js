@@ -31,3 +31,11 @@
 //An Adjacency Matrix is a 2D array of size V x V where V is the nomber of vertices in the graph.
 //Each row and column represent a vertex (node)
 //If the value of any elemen say, matrix[i][j] is 1, it represents that there is an edge conecting the vertex[i] and vertex[j]
+
+const matrix = [
+  [0, 1, 0],
+  [1, 0, 1],
+  [0, 1, 0],
+];
+
+console.log(matrix[0][1]);
