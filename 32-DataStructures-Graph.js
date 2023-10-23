@@ -55,3 +55,33 @@ console.log(adjacencyList["A"]);
 //With an adjacency list, we only need to store the values for the edges that exist. With adjacency matrix we store values irrespective of whether an edge exists or not... Storage wise, an adjacency list is more efficient.
 //With an Adjacency List, inserting and finding adjacent nodes is constant time complexity, whereas with adjacency matrix, it is linear complexity.
 //Adjacency Lists allows you to store additional values with an edge such as weight of the edge. With an Adjacency Matrix, such information would have to be stored externally.
+
+class Graph {
+  constructor() {
+    //create the empty map like DS to store the vertices
+    this.adjancencyList = {};
+  }
+
+  //addVertex() => adds a vertex(node) to the graph
+  addVertex(vertex) {
+    //check if the vertex exists, if not.. add it as a new set
+    if (!this.adjacencyList[vertex]) {
+      //use the Set() for better performance, it creates a new entry with key = vertex and the list empty to begin with.
+      this.adjacencyList[vertex] = new Set();
+    }
+  }
+
+  //addEdge() => accepts to vertices as params
+  addEdge(vertex1, vertex2) {
+    //Check if the vertices exists, if not call the addVertex method to add them
+    if (!this.adjacencyList[vertex1]) {
+      this.addVertex(vertex1);
+    }
+    if (!this.adjacencyList[vertex2]) {
+      this.addVertex(vertex2);
+    }
+    //to connect the edges between vertices, use the add() methos from the set Data Structure on both vertices.
+    this.adjacencyList[vertex1].add(vertex2);
+    this.adjacencyList[vertex2].add(vertex1);
+  }
+}
